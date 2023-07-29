@@ -1,9 +1,13 @@
 const setNewsHeight = () => {
-    document.getElementById('news').style.height = 0.5*document.getElementById('news').offsetWidth + 'px';
+    document.getElementById('news').style.height = 0.5 * document.getElementById('news').offsetWidth + 'px';
 }
 
 setNewsHeight();
-addEventListener('resize',setNewsHeight);
+addEventListener('resize', setNewsHeight);
+
+
+
+
 
 // Swipers
 var swiper1 = new Swiper('#swiper1', {
@@ -11,3 +15,9 @@ var swiper1 = new Swiper('#swiper1', {
     observer: true,
     observeParents: true,
 });
+
+var swiper2 = new Swiper('#swiper2', {
+    autoplay: false,
+    observer: true,
+    observeParents: true,
+})

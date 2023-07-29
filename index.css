@@ -8,13 +8,15 @@
     margin-bottom: 30px;
 }
 
-
+.nav-item{
+    user-select: none;
+}
 
 
 
 
 /* Swipers */
-#slide1 {
+#swiper1-slide1 {
     width: 100%;
     height: 0;
     padding-bottom: 75%;
@@ -22,7 +24,7 @@
     background: red;
 }
 
-#slide2 {
+#swiper1-slide2 {
     width: 100%;
     height: 0;
     padding-bottom: 75%;
@@ -30,7 +32,7 @@
     background: blue;
 }
 
-#slide3 {
+#swiper1-slide3 {
     width: 100%;
     height: 0;
     padding-bottom: 75%;
