@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="container" id="title_container">     <!--大标题-->
+    <div class="container" id="title_container"> <!--大标题-->
         <ul class="list-group">
             <li class="list-group-item" style="background: #ebebeb;">
                 <div class="row pull-right">
@@ -40,7 +40,7 @@
             </li>
             </u1>
     </div>
-    <div class="container">     <!--前瞻-->
+    <div class="container"> <!--前瞻-->
         <div class="row">
             <div class="col-md-5 col-sm-12 col-xs-12">
                 <div class="swiper" id="swiper1">
@@ -75,19 +75,23 @@
         </div>
     </div>
 
-    <div class="container swiper-no-swiping">     <!--文章-->
+    <div class="container swiper-no-swiping"> <!--文章-->
         <ul class="nav nav-pills nav-justified" style="margin-top: 40px;">
             <li class="nav-item">
-                <a class="nav-link active" onclick="swiper2.slideTo(0, 1000, false);">文章类型1</a>
+                <a class="nav-link active" id="RtclType1"
+                    onclick="swiper2.slideTo(0, 500, false); document.getElementsByClassName('active')[0].classList.remove('active'); document.getElementById('RtclType1').classList.add('active');">文章类型1</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" onclick="swiper2.slideTo(1, 1000, false);">文章类型2</a>
+                <a class="nav-link" id="RtclType2"
+                    onclick="swiper2.slideTo(1, 500, false); document.getElementsByClassName('active')[0].classList.remove('active'); document.getElementById('RtclType2').classList.add('active');">文章类型2</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" onclick="swiper2.slideTo(2, 1000, false);">文章类型3</a>
+                <a class="nav-link" id="RtclType3"
+                    onclick="swiper2.slideTo(2, 500, false); document.getElementsByClassName('active')[0].classList.remove('active'); document.getElementById('RtclType3').classList.add('active');">文章类型3</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" onclick="swiper2.slideTo(3, 1000, false);">文章类型4</a>
+                <a class="nav-link" id="RtclType4"
+                    onclick="swiper2.slideTo(3, 500, false); document.getElementsByClassName('active')[0].classList.remove('active'); document.getElementById('RtclType4').classList.add('active');">文章类型4</a>
             </li>
         </ul>
         <div class="swiper" id="swiper2">
