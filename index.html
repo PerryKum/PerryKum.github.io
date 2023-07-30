@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bonjour!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- Title -->
+    <div class="container" id="title_container">
+        <ul class="list-group">
+            <li class="list-group-item" style="background: #ebebeb;">
+                <div class="row pull-right">
+                    <div class="col-md-10 col-sm-9 col-xs-12">
+                        <h2 id="title"><em><strong>Perry Kum</strong><small>'s Various Cubes</small></em></h2>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" style="margin-top: 6px;">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Contact
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="https://space.bilibili.com/255126049"
+                                        target="_blank">bilibili</a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BVXfWoKzc2AnnDn2m-CxGSom2EOQmUH4&authKey=ldkDL27AQo6CKkV1AfhbECdxqNNYjuw7oTd%2Fpem2A3QEN4hxqJj3n8VgGo7ski7%2F&noverify=0&group_code=710807742"
+                                        target="_blank">QQ Group</a></li>
+                                <li><a class="dropdown-item" href="#">空置</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            </u1>
+    </div>
+    <!-- News -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-12 col-xs-12">
+                <div class="swiper" id="swiper1">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" id="swiper1-slide1"></div>
+                        <div class="swiper-slide" id="swiper1-slide2"></div>
+                        <div class="swiper-slide" id="swiper1-slide3"></div>
+                    </div>
+                    <div class="swiper1-pagination" style="user-select: none;"></div>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-12 col-xs-12">
+                <ul class="list-group overflow-auto" style="margin-top: 5px; margin-right: 16.5px; height: auto">
+                    <li class="list-group-item" style="background-color: #ebebeb;"><strong>热闻快讯</strong></li>
+                </ul>
+                <ul class="list-group overflow-auto" id="news" style="height: auto">
+                    <li class="list-group-item">Perry Kum</li>
+                    <li class="list-group-item">Blog构建中</li>
+                    <li class="list-group-item">别急别急别急别急别急</li>
+                    <li class="list-group-item">test</li>
+                    <li class="list-group-item">test</li>
+                    <li class="list-group-item">test</li>
+                    <li class="list-group-item">test</li>
+                    <li class="list-group-item">test</li>
+                    <li class="list-group-item">test</li>
+                    <li class="list-group-item">test</li>
+                    <li class="list-group-item">test</li>
+                    <li class="list-group-item">test</li>
+                    <li class="list-group-item">test</li>
+                    <li class="list-group-item">test</li>
+                    <li class="list-group-item">test</li>
+                    <li class="list-group-item">test</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Article -->
+    <div class="container swiper-no-swiping" style="margin-bottom: 50px;">
+        <ul class="nav nav-pills nav-justified" style="margin-top: 40px;">
+            <li class="nav-item">
+                <a class="nav-link active" id="RtclType1"
+                    onclick="swiper2.slideTo(0, 500, false); document.getElementsByClassName('active')[0].classList.remove('active'); document.getElementById('RtclType1').classList.add('active');">文章类型1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="RtclType2"
+                    onclick="swiper2.slideTo(1, 500, false); document.getElementsByClassName('active')[0].classList.remove('active'); document.getElementById('RtclType2').classList.add('active');">文章类型2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="RtclType3"
+                    onclick="swiper2.slideTo(2, 500, false); document.getElementsByClassName('active')[0].classList.remove('active'); document.getElementById('RtclType3').classList.add('active');">文章类型3</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="RtclType4"
+                    onclick="swiper2.slideTo(3, 500, false); document.getElementsByClassName('active')[0].classList.remove('active'); document.getElementById('RtclType4').classList.add('active');">文章类型4</a>
+            </li>
+        </ul>
+        <div class="swiper" id="swiper2">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" id="swiper2-slide1">
+                    <ul class="list-group overflow-auto" style="margin-top: 10px; height: auto">
+                        <li class="list-group-item">文章类型1 测试</li>
+                        <li class="list-group-item">test</li>
+                        <li class="list-group-item">test</li>
+                        <li class="list-group-item">test</li>
+                    </ul>
+                </div>
+                <div class="swiper-slide" id="swiper2-slide2">
+                    <ul class="list-group overflow-auto" style="margin-top: 10px; height: auto">
+                        <li class="list-group-item">文章类型2 测试</li>
+                        <li class="list-group-item">test</li>
+                        <li class="list-group-item">test</li>
+                        <li class="list-group-item">test</li>
+                </div>
+                <div class="swiper-slide" id="swiper2-slide3">
+                    <ul class="list-group overflow-auto" style="margin-top: 10px; height: auto">
+                        <li class="list-group-item">文章类型3 测试</li>
+                        <li class="list-group-item">test</li>
+                        <li class="list-group-item">test</li>
+                        <li class="list-group-item">test</li>
+                </div>
+                <div class="swiper-slide" id="swiper2-slide4">
+                    <ul class="list-group overflow-auto" style="margin-top: 10px; height: auto">
+                        <li class="list-group-item">文章类型4 测试</li>
+                        <li class="list-group-item">test</li>
+                        <li class="list-group-item">test</li>
+                        <li class="list-group-item">test</li>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="index.js"></script>
+
+</html>
