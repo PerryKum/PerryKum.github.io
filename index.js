@@ -1,5 +1,11 @@
 const setNewsHeight = () => {
-    document.getElementById('news').style.height = 0.5 * document.getElementById('news').offsetWidth + 'px';
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    if (width >= height) {
+        document.getElementById('news').style.height = 0.5 * document.getElementById('news').offsetWidth + 'px';
+    } else {
+        document.getElementById('news').style.height = 0.8 * document.getElementById('news').offsetWidth + 'px';
+    }
 }
 
 setNewsHeight();
