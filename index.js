@@ -11,8 +11,15 @@ const setNewsHeight = () => {
 setNewsHeight();
 addEventListener('resize', setNewsHeight);
 
+const setNewsTitleWidth = () => {
+    let cWidth = document.getElementById('news').clientWidth;
+    let iWidth = document.getElementById('news').offsetWidth;
+    let scrollBallWidth = cWidth - iWidth;
+    document.getElementById('news_title').style.marginRight = -(scrollBallWidth) + 'px';
+}
 
-
+setNewsTitleWidth();
+addEventListener('resize',setNewsTitleWidth);
 
 
 // Swipers
