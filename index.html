@@ -33,7 +33,7 @@
                                 <li><a class="dropdown-item"
                                         href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=BVXfWoKzc2AnnDn2m-CxGSom2EOQmUH4&authKey=ldkDL27AQo6CKkV1AfhbECdxqNNYjuw7oTd%2Fpem2A3QEN4hxqJj3n8VgGo7ski7%2F&noverify=0&group_code=710807742"
                                         target="_blank">QQ Group</a></li>
-                                <li><a class="dropdown-item" href="/rtcls/welcome.html" target="_blank">空置</a></li>
+                                <li><a class="dropdown-item" href="javascript:alert('什么都没有！');">空置</a></li>
                             </ul>
                         </div>
                     </div>
@@ -47,16 +47,26 @@
             <div class="col-md-5 col-sm-12 col-xs-12">
                 <div class="swiper" id="swiper1">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide" id="swiper1-slide1"></div>
-                        <div class="swiper-slide" id="swiper1-slide2"></div>
-                        <div class="swiper-slide" id="swiper1-slide3"></div>
+                        <div class="swiper-slide" style="user-select: none;">
+                            <a href="/rtcls/welcome.html" target="_blank">
+                                <img class="swiper1_img"src="/rtcls/welcome_pic.jpg" style="width: 100%; height: 100%;">
+                            </a>
+                        </div>
+                        <div class="swiper-slide" style="user-select: none;">
+                            <img class="swiper1_img" src="/rtcls/test2_pic.jpg" style="width: 100%; height: 100%;">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="swiper1_img" src="/rtcls/test3_pic.jpg" style="width: 100%; height: 100%;">
+                        </div>
                     </div>
                     <div class="swiper1-pagination" style="user-select: none;"></div>
                 </div>
             </div>
             <div class="col-md-7 col-sm-12 col-xs-12">
                 <ul class="list-group overflow-auto" id="news_title" style="margin-top: 5px; height: auto">
-                    <li class="list-group-item" style="background-color: #ebebeb;"><strong>热闻快讯</strong></li>
+                    <li class="list-group-item" style="background-color: #ebebeb; user-select: none;">
+                        <strong>热闻快讯</strong>
+                    </li>
                 </ul>
                 <ul class="list-group overflow-auto" id="news" style="height: auto">
                     <li class="list-group-item">Perry Kum</li>
