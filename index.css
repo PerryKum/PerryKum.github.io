@@ -1,0 +1,22 @@
+#title {
+    user-select: none;
+    margin-top: 3px;
+}
+
+#title_container {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.nav-item {
+    user-select: none;
+}
+
+.swiper1_img {
+    border-radius: 10px;
+    user-select: none;
+}
+
+.usn{
+    user-select: none;
+}
