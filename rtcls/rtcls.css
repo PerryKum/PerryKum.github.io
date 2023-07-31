@@ -29,3 +29,8 @@
     margin-bottom: 20px;
     border-radius: 10px;
 }
+
+.data {
+    font-size: xx-small;
+    /* <small class="data">&emsp;YYYY.MM.DD</small> */
+}

@@ -20,3 +20,10 @@
 .usn{
     user-select: none;
 }
+
+.data {
+    float: right;
+    user-select: none;
+    opacity: 0.5;
+    /* <small class="data">YYYY.MM.DD</small> */
+}
