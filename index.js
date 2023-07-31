@@ -29,11 +29,12 @@ var swiper1 = new Swiper('#swiper1', {
     autoplay: true,
     observer: true,
     observeParents: true,
-    loop: true,
+    loop: false,
     pagination: {
         el: '.swiper1-pagination',
         clickable: 'ture',
     }
+    
 });
 
 var swiper2 = new Swiper('#swiper2', {

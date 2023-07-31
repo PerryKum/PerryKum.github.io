@@ -16,3 +16,7 @@
     border-radius: 10px;
     user-select: none;
 }
+
+.usn{
+    user-select: none;
+}
