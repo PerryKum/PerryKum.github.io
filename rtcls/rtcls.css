@@ -12,12 +12,20 @@
     line-height: 25px;
 }
 
-.article_bg{
+.article_bg {
     padding: 20px;
     margin-bottom: 25px;
     border-radius: 20px;
 }
 
-.article_title{
+.article_title {
     padding-bottom: 10px;
+}
+
+.article_img {
+    width: 50%;
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
 }

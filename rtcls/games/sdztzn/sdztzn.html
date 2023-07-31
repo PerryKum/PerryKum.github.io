@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SteamDeck折腾指南</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="/rtcls/rtcls.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Title -->
+    <div class="container" id="title_container">
+        <ul class="list-group">
+            <li class="list-group-item" style="background: #ebebeb;">
+                <div class="row pull-right">
+                    <div class="col-md-10 col-sm-9 col-xs-12">
+                        <h2 id="title"><strong><em>SteamDeck折腾指南</em></strong></h2>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-2" style="margin-top: 6px;">
+                        <button type="button" class="btn btn-secondary"
+                            onclick="window.location.href='http://PerryKum.GitHub.io'">返回首页</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Article -->
+    <div class="container">
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>前言</em></div>
+            <div class="h6 article">&emsp;&emsp;博主大概是23年2月入了SteamDeck丐版（64G），然后插闪迪红金256G的tf卡玩了小半年，现在已经换了SN740 1T的ssd。
+            </div>
+            <div class="h6 article">
+                &emsp;&emsp;整体体验很好，Deck虽然体积和重量大但是人体工学设计做得不错，双手握持下并不会感觉到很大的压力，适合「靠着或坐着玩，玩累了可以搭在腿上」或「坐在桌子前面，搭在桌面上玩」；躺着玩的话举久了也会很累，搭在肚子上又很为难颈椎，所以不推荐。
+            </div>
+            <div class="h6 article">
+                &emsp;&emsp;至于系统问题，基于Linux的SteamOS折腾起来确实有些门槛，然后也会有一些奇怪的小bug，需要一定的思考能力和动手能力，但SteamOS优秀的界面交互设计非常适合想专心玩游戏的人。博主现在是换了1T的固态装SteamOS，然后用之前的闪迪红金卡做了Win
+                to go（Win10），体验下来感觉还是SteamOS更好用一点。</div>
+            <div class="h6 article">&emsp;&emsp;本帖主要是记录一些折腾SteamDeck的经验，希望能给同样想折腾SteamDeck的玩家带来一些帮助（长期更新）。</div>
+        </div>
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>更换固态硬盘（SN740）</em></div>
+            <div class="h5 article">一、拆机换固态</div>
+            <div class="h6 article">&emsp;&emsp;先将Steam Deck关机（非常重要！！）。</div>
+            <div class="h6 article">&emsp;&emsp;Steam Deck机身背面共8颗螺丝(如图)，其中外圈螺丝较长，内圈螺丝较短。建议使用好一点的十字螺丝刀，避免滑丝。</div>
+            <img class="article_img" src="/rtcls/games/sdztzn/img1.jpg">
+            <div class="h6 article">&emsp;&emsp;拧下螺丝后，两侧机壳是用卡扣连接的，可以用撬片轻轻撬开。</div>
+            <div class="h6 article">&emsp;&emsp;接下来是要拆掉屏蔽罩，共3颗螺丝（如图）。</div>
+            <img class="article_img" src="/rtcls/games/sdztzn/img2.jpg">
+            <div class="h6 article">&emsp;&emsp;然后就可以看见原装固态了，不过为了保险起见，这里建议先断开电源排线再进行后续操作。</div>
+            <div class="h6 article">
+                &emsp;&emsp;拧下固定原装固态的螺丝（如图）。小心取出并妥善保管，可以在海鲜市场卖50r左右，也可以买个硬盘盒当64G的U盘用（不建议，盘盒比盘还贵）。
+            </div>
+            <img class="article_img" src="/rtcls/games/sdztzn/img3.jpg">
+            <div class="h6 article">&emsp;&emsp;套在原装固态上的这一层是防静电罩，建议取下来保管好，套在新的固态上面；如果你给新固态装了散热铜片，就可以不用装（向商家求证过）。</div>
+            <div class="h6 article">
+                &emsp;&emsp;接下来就很简单了：将新固态轻轻插进槽中，轻轻按压螺丝一段并拧上固定螺丝，然后接上电源排线，再装上屏蔽罩（记得复原金属贴片，见图2中绿圈），然后扣上机壳（建议从下往上扣，防止机壳被掰弯），拧好螺丝（不要太紧）。要拆机的部分就完成啦！
+            </div>
+            <div class="h5 article">二、重新写入SteamOS系统</div>
+            <div class="h6 article">&emsp;&emsp;1、准备一个8G以上的空U盘（最好是USB3.0，不然后面会很痛苦）和USB-TypeC转接器。</div>
+            <div class="h6 article">&emsp;&emsp;2、搜索「Steam Deck恢复指示说明」或 <a href="https://help.steampowered.com/zh-cn/faqs/view/1b71-edf2-eb6d-2bb3" target="_blank">点击此处</a>，下载恢复镜像和写入工具（如图）。</div>
+            <img class="article_img" src="/rtcls/games/sdztzn/img4.jpg">
+            <div class="h6 article">&emsp;&emsp;3、打开Rufus，设备选择U盘，引导类型选择SteamOS的恢复镜像，点击开始将镜像写入U盘（注意：U盘会被格式化）。</div>
+            <img class="article_img" src="/rtcls/games/sdztzn/img5.jpg">
+            <div class="h6 article">&emsp;&emsp;4、将U盘通过USB-TypeC转接头插上Steam Deck，同时按住「音量-」和开机键，听到开机音效后松开，进入Boot Manager界面，选择你的U盘作为启动项（我刷完了，所以这里没有图），并在进入OS后双击「Reimage Steam Deck」（如图）。</div>
+            <img class="article_img" src="/rtcls/games/sdztzn/img6.jpg">
+            <div class="h6 article">&emsp;&emsp;5、等待刷机结束、进入系统、安装完成后就大功告成啦（弹窗一律点Process即可）。</div>
+        </div>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+</html>
