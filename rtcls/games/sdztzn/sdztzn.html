@@ -68,7 +68,7 @@
             <img class="article_img" src="/rtcls/games/sdztzn/img4.jpg">
             <div class="h6 article">&emsp;&emsp;3、打开Rufus，设备选择U盘，引导类型选择SteamOS的恢复镜像，点击开始将镜像写入U盘（注意：U盘会被格式化）。</div>
             <img class="article_img" src="/rtcls/games/sdztzn/img5.jpg">
-            <div class="h6 article">&emsp;&emsp;4、将U盘通过USB-TypeC转接头插上Steam Deck，同时按住「音量-」和开机键，听到开机音效后松开，进入Boot
+            <div class="h6 article">&emsp;&emsp;4、将U盘通过USB-TypeC转接头插上Steam Deck，按住「音量-」再按开机键，听到开机音效后松开，进入Boot
                 Manager界面，选择你的U盘作为启动项（我刷完了，所以这里没有图），并在进入OS后双击「Reimage Steam Deck」（如图）。</div>
             <img class="article_img" src="/rtcls/games/sdztzn/img6.jpg">
             <div class="h6 article">&emsp;&emsp;5、等待刷机结束、进入系统、安装完成后就大功告成啦（弹窗一律点Process即可）。</div>
@@ -97,6 +97,29 @@
                 &emsp;&emsp;&emsp;&emsp;<code>sudo echo -e "[main]\ndns=auto"  > /etc/NetworkManager/conf.d/dns.conf</code>
             </div>
             <div class="h6 article">&emsp;&emsp;&emsp;&emsp;<code>sudo nmcli general reload</code></div>
+        </div>
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>TF卡刷Win to go（Win10）</em></div>
+            <div class="h6 article">&emsp;&emsp;1、准备要做Win to go的tf卡（建议选择质量好的高速卡）和读卡器（建议USB3.0）。</div>
+            <div class="h6 article">&emsp;&emsp;2、<a href="https://next.itellyou.cn/" target="_blank">点击此处</a>
+                获取Windows10/11镜像（以Win10为例）。</div>
+            <img class="article_img" src="/rtcls/games/sdztzn/img7.jpg">
+            <div class="h6 article">&emsp;&emsp;3、将tf卡通过读卡器接入电脑，右键Win10镜像文件并装载。</div>
+            <div class="h6 article">&emsp;&emsp;4、<a href="https://pan.baidu.com/s/1ohVzEJ-F3wyvSEvrcqlKhw?pwd=tal1"
+                    target=" _blank">点击此处</a> 获取Win to
+                go，解压后运行：点击「浏览」选择装填的Win10镜像中的「X:\sources\install.wim」文件，可移动设备选择tf卡，然后点击「部署」即可，期间会反复弹出/装填tf卡，建议此时不要操作电脑直到出现进度条为止，等待提示部署完成。整个部署过程大概需要10~30分钟（视tf卡和读卡器的质量而定）。
+            </div>
+            <img class="article_img" src="/rtcls/games/sdztzn/img8.jpg">
+            <div class="h6 article">&emsp;&emsp;5、将tf卡插入Steam Deck，按住「音量-」再按开机键，听到开机音效后松开，进入Boot
+                Manager界面，启动项选择tf卡，等待开机。</div>
+            <div class="h6 article">
+                &emsp;&emsp;6、开机后按流程进行Windows准备设置。此时由于没有WiFi驱动，因此点击「我没有Internet连接」跳过网络设置；在「开始-设置-屏幕-显示方向」中可以改为横向显示。
+            </div>
+            <div class="h6 article">&emsp;&emsp;7、<a href="https://pan.baidu.com/s/1t5icbudUq1beZ1c9ZyrlzA?pwd=9fli"
+                    target="_blank">点击此处</a>
+                获取驱动包，解压缩后导入tf卡中（可以用放进U盘里，用转接头插入Deck导入；也可以关机拔下tf卡，用读卡器插入电脑导入），依次安装各驱动，全部安装完毕后重启即可。</div>
+            <div class="h6 article">&emsp;&emsp;注：手柄驱动的解决方案：Steam原生的手柄驱动还是非常好用的，因此建议在Windows系统下下载Steam，然后将非Steam游戏通过Steam创建桌面快捷方式并运行；有一款手柄驱动叫「<a href="https://github.com/Valkirie/HandheldCompanion/" target="_blank">Handheld Companion</a>」，其中的热键功能非常好用（如设置功率、呼出任务管理器等），但按键映射功能没有Steam原生驱动好用且冲突，因此博主选择将HC中的按键映射全部清空（包括手柄模式和键鼠模式，需要一点折腾），只保留热键映射（也就是说单纯把它变成热键软件），然后用Steam原生的手柄驱动玩游戏，体验还是挺不错的。</div>
+            <img class="article_img" src="/rtcls/games/sdztzn/img9.jpg">
         </div>
     </div>
 </body>
