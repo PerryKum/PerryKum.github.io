@@ -30,6 +30,14 @@
     border-radius: 10px;
 }
 
+.article_img_little {
+    width: 30%;
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
 .data {
     font-size: xx-small;
     /* <small class="data">&emsp;YYYY.MM.DD</small> */

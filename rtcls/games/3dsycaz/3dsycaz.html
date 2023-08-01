@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3DS Remote Install</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="/rtcls/rtcls.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Title -->
+    <div class="container" id="title_container">
+        <ul class="list-group">
+            <li class="list-group-item" style="background: #ebebeb;">
+                <div class="row pull-right">
+                    <div class="col-md-10 col-sm-9 col-xs-12">
+                        <h2 id="title"><strong><em>3DS Remote Install（远程安装）<small
+                                        class="data">&emsp;2023.08.01</small></em></strong></h2>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-2" style="margin-top: 6px;">
+                        <button type="button" class="btn btn-secondary"
+                            onclick="window.location.href='http://PerryKum.GitHub.io'">返回首页</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Article -->
+    <div class="container">
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>教程</em></div>
+            <div class="h5 article">一、3DS Remote Install</div>
+            <div class="h6 article">&emsp;&emsp;3DS Remote Install，即3DS远程安装，指从个人电脑利用「CIA
+                Manager」通过局域网连接3DS的FBI来安装「.cia」文件。</div>
+            <div class="h6 article">&emsp;&emsp;优点：不需要反复拔插存储卡（尤其是对于新三来说）；读写量比起拷贝安装少了一倍。以上两点均能有效延长存储卡寿命（3DS的存储卡实在是太容易崩了）。
+            </div>
+            <div class="h6 article">&emsp;&emsp;缺点：安装速度慢，只有拷贝安装的50%左右；容易因网络波动导致安装失败。</div>
+            <div class="h5 article">二、操作步骤</div>
+            <div class="h6 article">&emsp;&emsp;1、确保3DS上安装了FBI。</div>
+            <div class="h6 article">&emsp;&emsp;2、<a href="http://www.ffhome.com/works/1756.html"
+                    target="_blank">点击此处</a> 获取CIA Manager。</div>
+            <div class="h6 article">&emsp;&emsp;3、确保3DS与PC连接在同一局域网下，运行CIA Manager，点击「切换到FBI无线传输模式」（红圈）。</div>
+            <img class="article_img" src="/rtcls/games/3dsycaz/img1.jpg">
+            <div class="h6 article">&emsp;&emsp;4、3DS运行FBI，选择「Remote Install - Receive URLs over the
+                network」，将「FBI版本」、「IP」与「Port」填入CIA Manager中的对应位置。</div>
+            <div class="h6 article">&emsp;&emsp;5、在PC端唤出cmd（Win + R），在cmd中输入<code>ipconfig</code>，将「IPv4地址」填入CIA
+                Manager中的对应位置；最后的「HTTP端口」输入1~65535的任意整数值（建议输入49152~65535），若传输因端口被占用而失败，则更改此数值即可。</div>
+            <div class="h6 article">&emsp;&emsp;6、点击「载入一个文件夹」（黄圈），选择要上传的「.cia」文件所在的文件夹。</div>
+            <div class="h6 article">
+                &emsp;&emsp;7、单项传输：点击对应项后面的「开始传输」即可。<br>&emsp;&emsp;&emsp;&ensp;多项传输：勾选对应项前面的复选框，然后点击菜单栏的「开始向FBI传输选中文件」即可。
+            </div>
+            <div class="h6 article">&emsp;&emsp;8、在3DS上确认接收。</div>
+        </div>
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>常见问题</em></div>
+            <div class="h5 article">&emsp;&emsp;一、连接超时</div>
+            <img class="article_img_little" src="/rtcls/games/3dsycaz/img2.jpg">
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;原因：连接被防火墙拦截。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;解决方案：放行端口或关闭防火墙。</div>
+            <div class="h5 article">&emsp;&emsp;二、端口被占用</div>
+            <img class="article_img_little" src="/rtcls/games/3dsycaz/img3.jpg">
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;原因：HTTP端口被占用。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;解决方案：更换HTTP端口。</div>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+</html>
