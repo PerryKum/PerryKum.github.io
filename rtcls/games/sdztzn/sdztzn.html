@@ -17,7 +17,8 @@
             <li class="list-group-item" style="background: #ebebeb;">
                 <div class="row pull-right">
                     <div class="col-md-10 col-sm-9 col-xs-12">
-                        <h2 id="title"><strong><em>Steam Deck折腾指南<small class="data">&emsp;2023.07.31</small></em></strong></h2>
+                        <h2 id="title"><strong><em>Steam Deck折腾指南<small
+                                        class="data">&emsp;2023.07.31</small></em></strong></h2>
                     </div>
                     <div class="col-md-2 col-sm-3 col-xs-2" style="margin-top: 6px;">
                         <button type="button" class="btn btn-secondary"
@@ -61,14 +62,43 @@
             </div>
             <div class="h5 article">二、重新写入SteamOS系统</div>
             <div class="h6 article">&emsp;&emsp;1、准备一个8G以上的空U盘（最好是USB3.0，不然后面会很痛苦）和USB-TypeC转接器。</div>
-            <div class="h6 article">&emsp;&emsp;2、搜索「Steam Deck恢复指示说明」或 <a href="https://help.steampowered.com/zh-cn/faqs/view/1b71-edf2-eb6d-2bb3" target="_blank">点击此处</a>，下载恢复镜像和写入工具（如图）。</div>
+            <div class="h6 article">&emsp;&emsp;2、搜索「Steam Deck恢复指示说明」或 <a
+                    href="https://help.steampowered.com/zh-cn/faqs/view/1b71-edf2-eb6d-2bb3"
+                    target="_blank">点击此处</a>，下载恢复镜像和写入工具（如图）。</div>
             <img class="article_img" src="/rtcls/games/sdztzn/img4.jpg">
             <div class="h6 article">&emsp;&emsp;3、打开Rufus，设备选择U盘，引导类型选择SteamOS的恢复镜像，点击开始将镜像写入U盘（注意：U盘会被格式化）。</div>
             <img class="article_img" src="/rtcls/games/sdztzn/img5.jpg">
-            <div class="h6 article">&emsp;&emsp;4、将U盘通过USB-TypeC转接头插上Steam Deck，同时按住「音量-」和开机键，听到开机音效后松开，进入Boot Manager界面，选择你的U盘作为启动项（我刷完了，所以这里没有图），并在进入OS后双击「Reimage Steam Deck」（如图）。</div>
+            <div class="h6 article">&emsp;&emsp;4、将U盘通过USB-TypeC转接头插上Steam Deck，同时按住「音量-」和开机键，听到开机音效后松开，进入Boot
+                Manager界面，选择你的U盘作为启动项（我刷完了，所以这里没有图），并在进入OS后双击「Reimage Steam Deck」（如图）。</div>
             <img class="article_img" src="/rtcls/games/sdztzn/img6.jpg">
             <div class="h6 article">&emsp;&emsp;5、等待刷机结束、进入系统、安装完成后就大功告成啦（弹窗一律点Process即可）。</div>
         </div>
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>配置代理（ToMoon插件）</em></div>
+            <div class="h6 article">&emsp;&emsp;1、设置-系统设置-启用开发者模式。</div>
+            <div class="h6 article">&emsp;&emsp;2、设置-开发者-打开CFE远程调试-重启Steam Deck。</div>
+            <div class="h6 article">&emsp;&emsp;3、长按电源键，选择切换至桌面。</div>
+            <div class="h6 article">&emsp;&emsp;4、打开Konsole。</div>
+            <div class="h6 article">&emsp;&emsp;5、输入<code> curl -L http://dl.ohmydeck.net | sh </code>安装 Plugin Loader。
+            </div>
+            <div class="h6 article">&emsp;&emsp;6、输入<code> curl -L http://i.ohmydeck.net | sh </code>安装 ToMoon。</div>
+            <div class="h6 article">&emsp;&emsp;7、安装完毕后，回到游戏模式，点击「· · ·」键，会发现最下方多了个Plugin图标，里面有ToMoon插件。</div>
+            <div class="h6 article">&emsp;&emsp;8、点击「Manage Subscriptions」，在输入框中输入服务商提供的 Clash
+                订阅链接并下载，然后回到ToMoon选择订阅并点击「Enable Clash」启动。</div>
+            <div class="h6 article">&emsp;&emsp;9、点击「Open
+                Dashboard」可以进入仪表盘，在桌面模式下可以通过访问<code> 127.0.0.1:9090/ui </code>打开仪表盘。</div>
+            <div class="h6 article">&emsp;&emsp;注：若因某些原因导致无法上网，可以用「 · · · 键-Decky-To Moon-Tools-Reset
+                Network」解决；若插件丢失，可以在桌面模式下恢复DNS，即在Konsole中依次输入：</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;<code>sudo chattr -i /etc/resolv.conf</code></div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;<code>sudo systemctl stop systemd-resolved</code></div>
+            <div class="h6 article">
+                &emsp;&emsp;&emsp;&emsp;<code>sudo chmod a+w /etc/NetworkManager/conf.d/dns.conf</code></div>
+            <div class="h6 article">
+                &emsp;&emsp;&emsp;&emsp;<code>sudo echo -e "[main]\ndns=auto"  > /etc/NetworkManager/conf.d/dns.conf</code>
+            </div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;<code>sudo nmcli general reload</code></div>
+        </div>
+    </div>
 </body>
 
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
