@@ -17,7 +17,7 @@
     user-select: none;
 }
 
-.usn{
+.usn {
     user-select: none;
 }
 
@@ -26,4 +26,8 @@
     user-select: none;
     opacity: 0.5;
     /* <small class="data">YYYY.MM.DD</small> */
+}
+
+a {
+    text-decoration: none;
 }

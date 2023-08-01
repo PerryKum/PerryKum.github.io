@@ -42,3 +42,7 @@
     font-size: xx-small;
     /* <small class="data">&emsp;YYYY.MM.DD</small> */
 }
+
+a {
+    text-decoration: none;
+}
