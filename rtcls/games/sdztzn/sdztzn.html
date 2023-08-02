@@ -121,6 +121,24 @@
             <div class="h6 article">&emsp;&emsp;注：手柄驱动的解决方案：Steam原生的手柄驱动还是非常好用的，因此建议在Windows系统下下载Steam，然后将非Steam游戏通过Steam创建桌面快捷方式并运行；有一款手柄驱动叫「<a href="https://github.com/Valkirie/HandheldCompanion/" target="_blank">Handheld Companion</a>」，其中的热键功能非常好用（如设置功率、呼出任务管理器等），但按键映射功能没有Steam原生驱动好用且冲突，因此博主选择将HC中的按键映射全部清空（包括手柄模式和键鼠模式，需要一点折腾），只保留热键映射（也就是说单纯把它变成热键软件），然后用Steam原生的手柄驱动玩游戏，体验还是挺不错的。</div>
             <img class="article_img" src="/rtcls/games/sdztzn/img9.jpg">
         </div>
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>配置GE兼容层</em></div>
+            <div class="h6 article">&emsp;&emsp;1、切换至桌面模式，打开「discover」（应用商店），搜索「ProtonUp-Qt」并点击「Install」下载。</div>
+            <div class="h6 article">&emsp;&emsp;2、打开ProtonUp-Qt，点击「Add version」，在「Compatibility」中选择「GE-Proton」一项，在「Version」中选择想要的版本（一般无特殊需求选择最新版即可），然后点击「Install」并等待安装完毕。</div>
+            <div class="h6 article">&emsp;&emsp;3、想要使用GE兼容层的游戏，在「属性-兼容性」中勾选「强制使用特定Steam Play兼容性工具」，然后下拉菜单选择版本即可。</div>
+            <div class="h6 article">&emsp;&emsp;注：部分游戏可能会出现中文字丢失的现象（如《地精公司》），使用GE兼容层可以解决。</div>
+        </div>
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>SteamOS装Epic</em></div>
+            <div class="h6 article">&emsp;&emsp;1、切换至桌面模式，用火狐浏览器进入Epic官网，下载「EpicInstaller.msi」（或用U盘从PC端拷贝）。</div>
+            <div class="h6 article">&emsp;&emsp;2、打开Steam，选择「添加非Steam游戏」，路径为「Home/Deck/Downloads」，文件类型选「All Files」，添加「EpicInstaller.msi」。</div>
+            <div class="h6 article">&emsp;&emsp;3、在Steam库中右键刚添加的「EpicInstaller.msi」，点击「属性」，在「兼容性」中勾选「强制使用特定Steam Play兼容性工具」，然后下拉菜单选择最新的GE兼容层（关于GE兼容层的配置见本篇中“配置GE兼容层”部分）。</div>
+            <div class="h6 article">&emsp;&emsp;4、在「快捷方式」中的「启动选项」框内输入<code> STEAM_COMPAT_MOUNTS=/run/media/mmcblk0p1/ %COMMAND% </code>，这一步是为了让应用程序能够访问你的tf卡。</div>
+            <div class="h6 article">&emsp;&emsp;5、通过Steam运行「EpicInstaller.msi」，按流程安装完毕。</div>
+            <div class="h6 article">&emsp;&emsp;6、在Steam库中右键刚添加的「EpicInstaller.msi」，点击「属性」，将「目标」改为「home/deck/share/Steam/compatdata/xxxxxxxx/pfx/drive c/Program Files(x86)/Epic Games/Launcher/Poratal/Binaries/Win32/EpicGamesLauncher.exe」，其中「xxxxxxxx」为一串数字，每个人的都不尽相同，可以自己找一下。</div>
+            <div class="h6 article">&emsp;&emsp;7、（强迫症可选）将名称「EpicInstaller.msi」改为「Epic」。</div>
+            <div class="h6 article">&emsp;&emsp;8、回到游戏模式，就可以在「非Steam」中看到Epic啦。</div>
+        </div>
     </div>
 </body>
 
