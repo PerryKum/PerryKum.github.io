@@ -10,6 +10,7 @@
 
 .article {
     line-height: 25px;
+    word-wrap: break-word;
 }
 
 .article_bg {
