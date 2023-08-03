@@ -39,6 +39,13 @@
     border-radius: 10px;
 }
 
+.article_video_lg {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
 .data {
     font-size: xx-small;
     /* <small class="data">&emsp;YYYY.MM.DD</small> */
