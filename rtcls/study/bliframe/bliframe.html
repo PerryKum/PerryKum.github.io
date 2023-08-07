@@ -110,19 +110,20 @@
                 &emsp;&emsp;&emsp;&emsp;3、其他参数与上文基本一致，但「autoplay」无论值是什么都会开启自动播放，不赋值会报错，只有不写这个属性才能禁止自动播放。
             </div>
             <div class="h5 article">三、&lt;iframe&gt; 大小自适应</div>
-            <div class="h6 article">&emsp;&emsp;因为要维持 &lt;iframe&gt; <code>16:9</code> 的宽高比，因此只需要令 &lt;iframe&gt; 的宽度随窗口宽度变化，再令其高度随宽度按比例变化即可。</div>
+            <div class="h6 article">&emsp;&emsp;因为要维持 &lt;iframe&gt; <code>16:9</code> 的宽高比，因此只需要令 &lt;iframe&gt;
+                的宽度随窗口宽度变化，再令其高度随宽度按比例变化即可。</div>
             <div class="h6 article">&emsp;&emsp;
-                <pre style="margin: -50px -100px; color: #d63384">
+                <pre style="margin: -50px 0 -60px 0; color: #d63384; overflow-x: auto;">
                     <code>
-                    &lt;script&gt;
-                    const setIframeHeight = () => {
-                        document.getElementById('iframe').style.width = window.innerWidth + 'px';
-                        document.getElementById('iframe').style.height = (9 * document.getElementById('iframe').offsetWidth / 16) + 'px';
-                    }
-                    
-                    setIframeHeight();
-                    addEventListener('resize', setIframeHeight);
-                    &lt;/script&gt;
+    &lt;script&gt;
+        const setIframeHeight = () => {
+            document.getElementById('iframe').style.width = window.innerWidth + 'px';
+            document.getElementById('iframe').style.height = (9 * document.getElementById('iframe').offsetWidth / 16) + 'px';
+        }
+
+        setIframeHeight();
+        addEventListener('resize', setIframeHeight);
+    &lt;/script&gt;
                     </code>
                 </pre>
             </div>
