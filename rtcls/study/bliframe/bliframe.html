@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>【Web前端】用&lt;iframe&gt;在HTML中插入B站视频</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="/rtcls/rtcls.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Title -->
+    <div class="container" id="title_container">
+        <ul class="list-group">
+            <li class="list-group-item" style="background: #ebebeb;">
+                <div class="row pull-right">
+                    <div class="col-md-10 col-sm-9 col-xs-12">
+                        <h2 id="title"><strong><em>【Web前端】用&lt;iframe&gt;在HTML中插入B站视频<small
+                                        class="data">&emsp;2023.08.07</small></em></strong></h2>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-2" style="margin-top: 6px;">
+                        <button type="button" class="btn btn-secondary"
+                            onclick="window.location.href='http://PerryKum.GitHub.io'">返回首页</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Article -->
+    <div class="container">
+        <div class="bg-light article_bg">
+            <div class="h5 article">一、用 &lt;iframe&gt; 在 HTML 中插入B站视频</div>
+            <div class="h6 article">
+                &emsp;&emsp;最近在写博客的时候遇到了要在文章中插入视频的需求，由于 <code>&lt;video&gt;</code> 标签要从本地引用资源，因此选择了用
+                <code>&lt;iframe&gt;</code> 标签接入B站视频的播放器的方法。
+            </div>
+            <div class="h6 article">&emsp;&emsp;1、获取嵌入代码：将鼠标悬停在PC网页端B站视频播放器下方的「分享」按钮上，点击弹出元素中的「嵌入代码」获取。</div>
+            <div class="h6 article">&emsp;&emsp;2、嵌入代码结构：</div>
+            <div class="h6 article">
+                &emsp;&emsp;&emsp;&emsp;<code>&lt;iframe src="//player.bilibili.com/player.html?aid=NNNNNNNN6&bvid=BVXXXXXXXX&cid=NNNNNNNNNN&page=1&autoplay=1&danmaku=1&as_wide=1&t=60" height="1920" width="1080" name="player" allowfullscreen="true" sandebox=""&gt;&lt;/iframe&gt;</code>
+            </div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;<strong>src 参数：(写在 src 引号中链接最后，各项之间用「&」连接)</strong></div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「aid」article
+                id，即视频的 av 号；B站在 2020.03 把 av 号根据一定的算法转换成了 bv 号，所以如果填了 bvid ，那么不填 aid 也可。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「bvid」bilibili video id，即视频的 bv 号。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「cid」chat id，即视频对应弹幕池的编号，如果填了 aid / bvid，那么不填也可。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「page」视频集数（默认为1），即分集视频中的第几集（起始下标为1）。</div>
+            <div class="h6 article">
+                &emsp;&emsp;&emsp;&emsp;「autoplay」设定视频是否自动播放，1为自动播放、0为禁止自动播放，默认为1；注意：开启自动播放会默认伴随静音开播。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「danmaku」是否开启弹幕，1为开启、0为关闭，默认为1。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「as_wide」是否宽屏，1为宽屏、0为小屏，默认为1。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「t」&lt;iframe&gt;加载完毕时自动跳转至该秒数并自动播放，单位s，默认为0。</div>
+            <div class="h6 article">
+                &emsp;&emsp;&emsp;&emsp;「high_quality」视频清晰度，1为高清、0为最低清晰度，默认为0；注意：由于&lt;iframe&gt;默认处于未登陆状态，且B站播放器在未登录状态下只允许视频
+                360p 播放，所以该参数约等于没用。
+            </div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;<strong>iframe 参数：（写在 iframe 标签中，各项之间用空格隔开）</strong></div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「src」规定 &lt;iframe&gt; 中显示文档的URL。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「height」规定 &lt;iframe&gt; 宽度，单位px。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「width」规定 &lt;iframe&gt; 高度，单位px。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「name」规定 &lt;iframe&gt; 名称。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「allowfullscreen」规定 &lt;iframe&gt; 是否允许全屏播放。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「seamless」令 &lt;iframe&gt; 看起来就像是父文档的一部分，是一个 Boolean 值；注意：只有
+                Chrome 和 Safari
+                6 支持 &lt;iframe&gt; 标签的 seamless 属性。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「sandbox」对 &lt;iframe&gt; 的额外限制，用以提升iFrame的安全性；注意：sandbox
+                值既可以是用空格分隔的一系列指定的字符串，也可以是一个空字符串（将会启用所有的限制）。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;其他属性，如「align」、「scrolling」等，HTML5 不支持，建议使用 CSS
+                代替（建议所有样式有关的属性都尽量使用 CSS 代替）。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;<strong>sandbox 参数：（写在 sandbox 属性的引号中，各项之间用空格隔开）</strong>
+            </div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「allow-same-origin」允许将内容作为普通源来对待，否则嵌入的内容将被视为一个独立的源（跨域）。
+            </div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「allow-top-navigation」允许嵌入的网页对顶级窗口进行导航。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「allow-forms」允许提交表单。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「allow-scripts」允许脚本执行。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「allow-modals」允许弹出提示框。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「allow-popups」允许嵌入的网页使用 <code>window.open();</code>
+                方法弹出窗口。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「allow-popups-to-escape-sandbox」允许嵌入的网页使用
+                <code>window.open();</code>
+                方法弹出窗口，且弹出的窗口不受沙箱的限制。
+            </div>
+            <div class="h6 article">
+                &emsp;&emsp;&emsp;&emsp;「allow-downloads-without-user-activation」允许在没有用户激活的情况下，嵌入的网页启动下载。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「allow-orientation-lock」允许嵌入的网页用脚本锁定屏幕的方向。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;「（空字符串）」打开以上所有限制。</div>
+            <div class="h6 article">
+                &emsp;&emsp;&emsp;&emsp;注意：同时开启「allow-scripts」和「allow-same-origin」将使得嵌入的网页可以通过脚本改变或删除 sandbox 属性。</div>
+            <div class="h5 article">二、更简洁的播放器</div>
+            <div class="h6 article">&emsp;&emsp;方法一：设置
+                <code>sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"</code> 即可阻止通过
+                &lt;iframe&gt; 跳转至B站（原理不太懂，但确实有效）。
+            </div>
+            <div class="h6 article">&emsp;&emsp;方法二：改用移动网页端B站视频播放器的嵌入代码。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;<code>&lt;iframe
+                src="//www.bilibili.com/blackboard/html5mobileplayer.html?bvid=BVXXXXXXXX&page=1&as_wide=1"
+                allowfullscreen="allowfullscreen"&gt;&lt;/iframe&gt;</code>
+            </div>
+            <div class="h6 article">&emsp;&emsp;&emsp;&emsp;<strong>与PC网页端的不同：</strong></div>
+            <div class="h6 article">
+                &emsp;&emsp;&emsp;&emsp;1、播放器路径由「//player.bilibili.com/player.html」变为「//www.bilibili.com/blackboard/html5mobileplayer.html」
+            </div>
+            <div class="h6 article">
+                &emsp;&emsp;&emsp;&emsp;2、界面十分简洁，只有播放/暂停、进度条、弹幕开关、静音、全屏功能，没有跳转功能即不会触发发点击跳转。
+            </div>
+            <div class="h6 article">
+                &emsp;&emsp;&emsp;&emsp;3、其他参数与上文基本一致，但「autoplay」无论值是什么都会开启自动播放，不赋值会报错，只有不写这个属性才能禁止自动播放。
+            </div>
+            <div class="h5 article">三、&lt;iframe&gt; 大小自适应</div>
+            <div class="h6 article">&emsp;&emsp;因为要维持 &lt;iframe&gt; <code>16:9</code> 的宽高比，因此只需要令 &lt;iframe&gt; 的宽度随窗口宽度变化，再令其高度随宽度按比例变化即可。</div>
+            <div class="h6 article">&emsp;&emsp;
+                <pre style="margin: -50px -100px; color: #d63384">
+                    <code>
+                    &lt;script&gt;
+                    const setIframeHeight = () => {
+                        document.getElementById('iframe').style.width = window.innerWidth + 'px';
+                        document.getElementById('iframe').style.height = (9 * document.getElementById('iframe').offsetWidth / 16) + 'px';
+                    }
+                    
+                    setIframeHeight();
+                    addEventListener('resize', setIframeHeight);
+                    &lt;/script&gt;
+                    </code>
+                </pre>
+            </div>
+        </div>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+</html>
