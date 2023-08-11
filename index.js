@@ -21,18 +21,6 @@ const setNewsTitleWidth = () => {
 setNewsTitleWidth();
 addEventListener('resize', setNewsTitleWidth);
 
-const cancelContactOffset = () => {
-    let width = window.innerWidth;
-    if (width < 768) {
-        document.getElementById('contact').classList.remove('offset-1');
-    } else {
-        document.getElementById('contact').classList.add('offset-1');
-    }
-}
-
-cancelContactOffset();
-addEventListener('resize', cancelContactOffset);
-
 
 
 // Swipers
