@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>【微信小程序】记一次简单的微信小程序开发</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="/rtcls/rtcls.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Title -->
+    <div class="container" id="title_container">
+        <ul class="list-group">
+            <li class="list-group-item" style="background: #ebebeb;">
+                <div class="row pull-right">
+                    <div class="col-md-10 col-sm-9 col-xs-12">
+                        <h2 id="title"><strong><em>【微信小程序】记一次简单的微信小程序开发<small
+                                        class="data">&emsp;2023.08.13</small></em></strong></h2>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-2" style="margin-top: 6px;">
+                        <button type="button" class="btn btn-secondary"
+                            onclick="window.location.href='/index.html'">返回首页</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Article -->
+    <div class="container">
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>前言</em></div>
+            <div class="h6 article">
+                &emsp;&emsp;昨晚正打着麻将，突然收到家母同学家孩子的微信，问我已经发布的微信小程序为什么搜索不到。我去看了下发现是用第三方平台的可视化工具做的，相当于外包，发布要支付199r（真黑啊）。了解了一下以后感觉难度不高，就接下来了，也算是自己第一次接外包。
+            </div>
+            <div class="h6 article">&emsp;&emsp;因为不想写流水账，所以其实是记录一些开发过程中的小经验、小细节之类的。</div>
+        </div>
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>2023.08.13</em></div>
+            <div class="h6 article">&emsp;&emsp;1、wxml 不支持如 <code><pre style="display: inline; font-size:larger;">&emsp</pre></code> 之类的特殊字符解码。解决方案：①在标签内加上 <code>decode='true'</code> ；②直接输入全角空格（wxml 不会吞全角空格，输入几个就是几个）。</div>
+        </div>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+</html>
