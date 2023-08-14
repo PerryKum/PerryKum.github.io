@@ -33,13 +33,19 @@
         <div class="bg-light article_bg">
             <div class="h3 article article_title"><em>前言</em></div>
             <div class="h6 article">
-                &emsp;&emsp;昨晚正打着麻将，突然收到家母同学家孩子的微信，问我已经发布的微信小程序为什么搜索不到。我去看了下发现是用第三方平台的可视化工具做的，相当于外包，发布要支付199r（真黑啊）。了解了一下以后感觉难度不高，就接下来了，也算是自己第一次接外包。
+                &emsp;&emsp;昨天晚上正打麻将，突然收到家母同学家孩子的微信，问我已经发布的微信小程序为什么搜索不到。我去看了下发现是用第三方平台的可视化工具做的，相当于外包，发布要支付199r（真黑啊）。了解了一下以后感觉难度不高，就接下来了，也算是自己第一次接外包。
             </div>
             <div class="h6 article">&emsp;&emsp;因为不想写流水账，所以其实是记录一些开发过程中的小经验之类的，基本不会有太长篇大论的部分。</div>
         </div>
         <div class="bg-light article_bg">
             <div class="h3 article article_title"><em>2023.08.13</em></div>
-            <div class="h6 article">&emsp;&emsp;1、wxml 不支持如 <code><pre style="display: inline; font-size:larger;">&emsp</pre></code> 之类的特殊字符解码。解决方案：①在标签内加上 <code>decode='true'</code> ；②直接输入全角空格（wxml 不会吞全角空格，输入几个就是几个）。</div>
+            <div class="h6 article">&emsp;&emsp;1、wxml 不支持如 <code><pre style="display: inline; font-size:larger;">&emsp</pre></code> 之类的特殊字符解码。解决方案：①在标签内加上 <code>decode='true'</code> ；②直接输入全角空格（wxml 不吞全角空格，输入几个就是几个）。</div>
+            <div class="h6 article">&emsp;&emsp;2、wxml 不支持「.svg」文件或 <code>&lt;svg&gt;</code> 标签。解决方案：①将「.svg」转化为「.jpg」等 wxml 支持的图像文件（不推荐，会增加不必要的网络请求）；②「<a href="https://codepen.io/jakob-e/pen/doMoML">点击此处</a>」将 <code>&lt;svg&gt;</code> 转化为「dataurl」（推荐）。</div>
+            <div class="h6 article">&emsp;&emsp;&emsp;dataurl 使用方法：新建一个「<code>&lt;view&gt;</code>」标签，然后将 dataurl 作为标签的「background-image」属性值。</div>
+        </div>
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>2023.08.14</em></div>
+            <div class="h6 article">&emsp;&emsp;1、微信小程序开发的 js 没有 document 和 window 对象，获取 wxml 元素要用 <code>wx.createSelectorQuery()</code> 对象。</div>
         </div>
 </body>
 
