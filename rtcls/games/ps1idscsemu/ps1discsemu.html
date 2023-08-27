@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>如何优雅的在 Retroarch 中玩 PS1 分盘游戏</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="/rtcls/rtcls.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Title -->
+    <div class="container" id="title_container">
+        <ul class="list-group">
+            <li class="list-group-item" style="background: #ebebeb;">
+                <div class="row pull-right">
+                    <div class="col-md-10 col-sm-9 col-xs-12">
+                        <h2 id="title"><strong><em>如何优雅的在 Retroarch 中玩 PS1 分盘游戏<small
+                                        class="data">&emsp;2023.08.27</small></em></strong></h2>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-2" style="margin-top: 6px;">
+                        <button type="button" class="btn btn-secondary"
+                            onclick="window.location.href='/index.html'">返回首页</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Article -->
+    <div class="container">
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>前言</em></div>
+            <div class="h6 article">
+                &emsp;&emsp;由于早期存储介质的技术水平有限，且不存在类似当今光驱游戏设备的「光盘作为验证工具，游戏内容联网下载」的技术，因此当时体量较大的 PS1
+                游戏均采用分盘的方式来存储，这就给后世的玩家带来了一个问题：如何在模拟器中复现 PS1 的换盘操作。</div>
+            <div class="h6 article">
+                &emsp;&emsp;博主前两天入了周哥的「RG353PS」，使用的是 Retroarch 内核，于是研究了一下在 Retroarch 中模拟 PS1 分盘游戏的方法。</div>
+        </div>
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>PS1 Rom 构成</em></div>
+            <div class="h6 article">&emsp;&emsp;我们解压一份 PS1 Rom
+                的压缩包，得到的文件一般会有两种情况：①「.img」的光盘映像（可能会附带「.sub」和「.ccd」）；②「.bin」的二进制数据文件（多盘游戏一般会附带「.cue」）。</div>
+            <div class="h6 article">&emsp;&emsp;对于①来说，只需要将「.img」文件放在游戏目录内直接运行即可。「.sub」和「.ccd」文件则是在使用 CloneCD
+                制作「.img」的过程中生成的控制文件：「.ccd」包涵了CD的逻辑结构，「.sub」包含了光盘 subchannel 中存储的数据；它们被用于光盘的刻录，而对于模拟器运行游戏文件来说没有影响。</div>
+            <div class="h6 article">
+                &emsp;&emsp;对于②来说，如果是单盘游戏，只需要将「.bin」文件放在游戏目录内即可。「.bin」是一种万金油的文件格式，如果不知道给二进制数据文件设定成什么格式好，那就可以设定成「.bin」格式，总之
+                PS1 Rom 里的「.bin」文件就是游戏的数据文件。
+            </div>
+            <div class="h6 article">
+                &emsp;&emsp;同样对于②来说，如果是多盘游戏，除了从各分盘中提取出的游戏文件「.bin」外，往往还会附带各盘对应的「.cue」文件。「.cue」为光盘映像辅助文件，对光盘的刻录和运行起引导性质，也是给
+                PS1 游戏换盘的关键。</div>
+        </div>
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>如何优雅的在 Retroarch 中玩 PS1 分盘游戏</em></div>
+            <div class="h6 article">&emsp;&emsp;「.m3u」，即「Mp3
+                URL」，是一种播放列表文件，用来指向多个媒体源并将它们按顺序播放，而「.cue」就是「.m3u」支持的源的格式之一。因此，我们选择用「.cue」引导其对应的「.bin」，再将这些「.cue」写成「.m3u」播放列表，在运行游戏时只需要运行「.m3u」文件，即可按顺序播放各盘游戏，非常优雅。
+            </div>
+            <div class="h5 article">详细教程：</div>
+            <div class="h6 article">&emsp;&emsp;1、将 Rom 所有分盘的「.bin」文件和对应的「.cue」文件放在同一目录下；若没有对应的「.cue」文件可以<a href="http://cuegenerator.teriffy.cz/" target="_blank">点击此处</a>手动制作。注意：「.cue」文件与其对应的「.bin」文件名称应完全相同。</div>
+            <div class="h6 article">&emsp;&emsp;2、在同目录下新建一个文本文档，打开后按分盘顺序输入对应「.cue」文件的名称（带后缀），每行一个，保存后更改后缀名为「.m3u」。</div>
+            <img class="article_img_lg" src="/rtcls/games/ps1idscsemu/img1.jpg">
+            <img class="article_img_lg" src="/rtcls/games/ps1idscsemu/img2.jpg">
+            <div class="h6 article">&emsp;&emsp;3、运行游戏时只需运行「.m3u」文件即可</div>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+</html>
