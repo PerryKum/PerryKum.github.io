@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RG505官方游戏前端 如何扫描tf卡内的游戏</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="/rtcls/rtcls.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Title -->
+    <div class="container" id="title_container">
+        <ul class="list-group">
+            <li class="list-group-item" style="background: #ebebeb;">
+                <div class="row pull-right">
+                    <div class="col-md-10 col-sm-9 col-xs-12">
+                        <h2 id="title"><strong><em>RG505官方游戏前端 如何扫描 tf2 卡内的游戏<small
+                                        class="data">&emsp;2023.09.24</small></em></strong></h2>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-2" style="margin-top: 6px;">
+                        <button type="button" class="btn btn-secondary"
+                            onclick="window.location.href='/index.html'">返回首页</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Article -->
+    <div class="container">
+        <div class="bg-light article_bg">
+            <div class="h6 article">&emsp;&emsp;周哥RG505的官方前端是支持一键扫描 tf2
+                卡根目录的游戏的（RG405v同理，因为是同一个系统），有些玩家可能不愿意去一个个修改前端的扫描路径到自己的文件夹体系中（虽然我推荐这么做），所以我们来看一下要怎么把准备好的游戏或者是懒人包放到正确的位置，让游戏前端可以把它们一键扫描出来。
+            </div>
+            <div class="h6 article">&emsp;&emsp;我们先来看一下前端默认的路径。这里以NGP游戏为例（别的都被我改掉了）：</div>
+            <img class="article_img" src="/rtcls/games/rg505gs/img1.jpg"
+                onclick="window.open('/rtcls/games/rg505gs/img1.jpg')">
+            <div class="h6 article">&emsp;&emsp;「storage」指的是外部存储；「C21D-6E00」指的是 tf2 卡的名字（这里是我的 tf2
+                名字），如果没用过游戏前端的一键扫描功能的话这里会是「0000-0000」，扫描一次后就会变成你自己的 tf2 卡的名字；「ngp」指的是模游戏 Rom 的存放位置，也是该模拟器扫描其对应游戏的地方。
+            </div>
+            <div class="h6 article">&emsp;&emsp;也就是说，如果我们想让游戏前端在 tf2 卡种扫描 ngp
+                的游戏并添加到列表中，我们就要保证「/storage/0000-0000/ngp」这个路径下有 ngp 的游戏 Rom 。</div>
+        </div>
+        <div class="bg-light article_bg">
+            <div class="h5 article">详细步骤</div>
+            <div class="h6 article">&emsp;&emsp;1、准备一张 tf 卡，格式化后插入 RG505（建议选择「用作便携式存储设备」），RG505 会将卡格式化为其 tf2 卡的格式。</div>
+            <div class="h6 article">&emsp;&emsp;2、连接电脑，进入 tf2 卡的根目录（如图），这里就是上文所提到的「0000-0000」位置（这串数字因人而异，但格式都是这样的）。
+            </div>
+            <img class="article_img" src="/rtcls/games/rg505gs/img2.jpg"
+                onclick="window.open('/rtcls/games/rg505gs/img2.jpg')">
+            <div class="h6 article">&emsp;&emsp;3、在该根目录下创建存放对应模拟器游戏 Rom 的文件夹（以 ngp
+                为例），该文件夹的路径就是「/storage/0000-0000/ngp」，符合前端扫描游戏默认的路径。然后将 ngp 的游戏 Rom 放在该文件夹中。注意：存放 Rom
+                的文件夹名称必须要与游戏前端指定的扫描文件夹名称一致。</div>
+            <img class="article_img" src="/rtcls/games/rg505gs/img3.jpg"
+                onclick="window.open('/rtcls/games/rg505gs/img3.jpg')">
+            <img class="article_img" src="/rtcls/games/rg505gs/img4.jpg"
+                onclick="window.open('/rtcls/games/rg505gs/img4.jpg')">
+            <div class="h6 article">&emsp;&emsp;5、回到 RG505，进入游戏前端，在选择模拟器的界面按「X」键，选择「确定」开始扫描（所有模拟器都会扫描对应的游戏）。</div>
+            <img class="article_img" src="/rtcls/games/rg505gs/img5.jpg"
+                onclick="window.open('/rtcls/games/rg505gs/img5.jpg')">
+            <div class="h6 article">&emsp;&emsp;6、扫描成功，游戏可以正常运行。</div>
+            <img class="article_img" src="/rtcls/games/rg505gs/img6.jpg"
+                onclick="window.open('/rtcls/games/rg505gs/img6.jpg')">
+            <img class="article_img" src="/rtcls/games/rg505gs/img7.jpg"
+                onclick="window.open('/rtcls/games/rg505gs/img7.jpg')">
+            <div class="h6 article">&emsp;&emsp;7、关于懒人包：懒人包解压后里面肯定也会有一个文件夹，里面的文件夹都是各模拟器的名字，只需要把这些名字为各模拟器的文件夹复制到 tf2
+                卡的根目录中即可。</div>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+</html>
