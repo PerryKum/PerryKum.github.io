@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>记一次修复闲鱼二手暗病 RG505</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="/rtcls/rtcls.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Title -->
+    <div class="container" id="title_container">
+        <ul class="list-group">
+            <li class="list-group-item" style="background: #ebebeb;">
+                <div class="row pull-right">
+                    <div class="col-md-10 col-sm-9 col-xs-12">
+                        <h2 id="title"><strong><em>记一次修复闲鱼二手 RG505 暗病<small
+                                        class="data">&emsp;2023.09.27</small></em></strong></h2>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-2" style="margin-top: 6px;">
+                        <button type="button" class="btn btn-secondary"
+                            onclick="window.location.href='/index.html'">返回首页</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Article -->
+    <div class="container">
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>前记</em></div>
+            <div class="h6 article">&emsp;&emsp;博主于 2023.09.15 在闲鱼以当时的市场最低价 ￥650 购入了一台箱说全的「RG505
+                复古灰」（如图），到手后发现有暗病，遂尝试修复。</div>
+            <img class="article_img" src="/rtcls/games/rg505repair/img1.jpg"
+                onclick="window.open('/rtcls/games/rg505repair/img1.jpg')">
+            <div class="h6 article">&emsp;&emsp;附一张内部电路图：</div>
+            <img class="article_img" src="/rtcls/games/rg505repair/img2.jpg"
+                onclick="window.open('/rtcls/games/rg505repair/img2.jpg')">
+        </div>
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>过程</em></div>
+            <div class="h5 article">一、现象</div>
+            <div class="h6 article">&emsp;&emsp;1、在开启「性能模式（关闭温控，非超频）」和进行「安兔兔高压测试」时自动断电，需要拆开后盖、重新拔插电池后才能开机。</div>
+            <div class="h6 article">&emsp;&emsp;2、在电量「55% ~ 65%」时随机断电并显示为「电量不足」，需要充电后才能开机，有时需要拆开后盖、重新拔插电池后才能开机。</div>
+            <div class="h6 article">&emsp;&emsp;3、拆机时发现原本的内六角螺丝有两颗存在滑丝。</div>
+            <div class="h5 article">二、诊断</div>
+            <div class="h6 article">&emsp;&emsp;在排除接触不良后，考虑是锂电池存在电芯老化，造成电压过低，在低于运行下限电压时触发保护板，造成断电。</div>
+            <div class="h5 article">三、修复</div>
+            <div class="h6 article">&emsp;&emsp;1、更换电池：中顺芯锂电池带NTC保护板 尺寸606090 容量5000mAh 工作电压3.7V 1.25-3p公插
+                线序红黄黑（固定在后盖上）。
+            </div>
+            <div class="h6 article">&emsp;&emsp;2、将六角螺丝更换为「M2.5*5 4.2mm」十字螺丝（第一次买成了「M2*5 4mm」，第二次买成了「M2.5*5
+                5mm」，这下知道螺旋测微器存在的意义了）。</div>
+            <img class="article_img_sm" src="/rtcls/games/rg505repair/img3.jpg"
+                onclick="window.open('/rtcls/games/rg505repair/img3.jpg')">
+            <img class="article_img_sm" src="/rtcls/games/rg505repair/img4.jpg"
+                onclick="window.open('/rtcls/games/rg505repair/img4.jpg')">
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+</html>
