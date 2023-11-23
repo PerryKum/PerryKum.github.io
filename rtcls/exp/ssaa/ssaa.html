@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>以管理员身份开机自启动程序</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="/rtcls/rtcls.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Title -->
+    <div class="container" id="title_container">
+        <ul class="list-group">
+            <li class="list-group-item" style="background: #ebebeb;">
+                <div class="row pull-right">
+                    <div class="col-md-10 col-sm-9 col-xs-12">
+                        <h2 id="title"><strong><em>以管理员身份开机自启动程序<small class="data">&emsp;2023.11.23</small></em></strong></h2>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-2" style="margin-top: 6px;">
+                        <button type="button" class="btn btn-secondary"
+                            onclick="window.location.href='/index.html'">返回首页</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Article -->
+    <div class="container">
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>教程（以「Watt Toolkit」为例）</em></div>
+            <div class="h6 article">&emsp;&emsp;1、在「开始菜单」中搜索「任务计划程序」并打开。</div>
+            <div class="h6 article">&emsp;&emsp;2、选择「操作 → 创建基本任务」，填写任务名称、任务描述（选填），然后点击「下一页」。</div>
+            <img class="article_img_sm" src="/rtcls/exp/ssaa/img1.jpg" onclick="window.open('/rtcls/exp/ssaa/img1.jpg')">
+            <img class="article_img_sm" src="/rtcls/exp/ssaa/img2.jpg" onclick="window.open('/rtcls/exp/ssaa/img2.jpg')">
+            <div class="h6 article">&emsp;&emsp;3、触发器选择「计算机启动时」。</div>
+            <img class="article_img_sm" src="/rtcls/exp/ssaa/img3.jpg" onclick="window.open('/rtcls/exp/ssaa/img3.jpg')">
+            <div class="h6 article">&emsp;&emsp;4、操作选择「启动程序」，然后选择目标程序的可执行文件。</div>
+            <img class="article_img_sm" src="/rtcls/exp/ssaa/img4.jpg" onclick="window.open('/rtcls/exp/ssaa/img4.jpg')">
+            <img class="article_img_sm" src="/rtcls/exp/ssaa/img5.jpg" onclick="window.open('/rtcls/exp/ssaa/img5.jpg')">
+            <div class="h6 article">&emsp;&emsp;5、在最后一页勾选「当单击“完成”时，打开此任务属性的对话框」，然后点击「完成」，弹出新的任务属性对话框。</div>
+            <img class="article_img_sm" src="/rtcls/exp/ssaa/img6.jpg" onclick="window.open('/rtcls/exp/ssaa/img6.jpg')">
+            <div class="h6 article">&emsp;&emsp;6、点击「更改用户或组」，在最下方输入框中键入「administrators」后点击「确定」。</div>
+            <img class="article_img_sm" src="/rtcls/exp/ssaa/img7.jpg" onclick="window.open('/rtcls/exp/ssaa/img7.jpg')">
+            <img class="article_img_sm" src="/rtcls/exp/ssaa/img8.jpg" onclick="window.open('/rtcls/exp/ssaa/img8.jpg')">
+            <div class="h6 article">&emsp;&emsp;7、设置完成如图，点击「确定」即可生效。</div>
+            <img class="article_img_sm" src="/rtcls/exp/ssaa/img9.jpg" onclick="window.open('/rtcls/exp/ssaa/img9.jpg')">
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+</html>
