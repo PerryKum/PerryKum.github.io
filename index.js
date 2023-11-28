@@ -21,7 +21,7 @@ const setNewsTitleWidth = () => {
 setNewsTitleWidth();
 addEventListener('resize', setNewsTitleWidth);
 
-
+new ClipboardJS('.CC');
 
 // Swipers
 var swiper1 = new Swiper('#swiper1', {
