@@ -31,3 +31,13 @@
 a {
     text-decoration: none;
 }
+
+#CC {
+    user-select: none;
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+    background: lightyellow;
+    font-size: larger;
+    color: grey;
+}
