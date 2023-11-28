@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RG505 前端键改为唤醒天马前端</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="/rtcls/rtcls.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Title -->
+    <div class="container" id="title_container">
+        <ul class="list-group">
+            <li class="list-group-item" style="background: #ebebeb;">
+                <div class="row pull-right">
+                    <div class="col-md-10 col-sm-9 col-xs-12">
+                        <h2 id="title"><strong><em>RG505 前端键改为唤醒天马前端<small
+                                        class="data">&emsp;2023.11.28</small></em></strong></h2>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-2" style="margin-top: 6px;">
+                        <button type="button" class="btn btn-secondary"
+                            onclick="window.location.href='/index.html'">返回首页</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Article -->
+    <div class="container">
+        <div class="bg-light article_bg">
+            <div class="h6 article">&emsp;&emsp;周哥 RG505 的官方前端是真的不好用，所以想把前端键的功能改成唤醒天马前端而非 RG 前端。</div>
+        </div>
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>简单教程</em></div>
+            <div class="h6 article">&emsp;&emsp;1、<a href="https://pan.baidu.com/s/1mB8fzRnHuh3Hjuwt7paOAw?pwd=ie1c"
+                    target="_blank">「点击此处(百度网盘)」</a>或<a href="https://wwqt.lanzoum.com/i8UHQ1g85eni"
+                    target="_blank">「点击此处(蓝奏云，密码 1psz )」</a>获取「Button Mapper v3.20」，或直接在「Google Store」下载。</div>
+            <div class="h6 article">&emsp;&emsp;2、启动「Button Mapper」，按软件引导设置。</div>
+            <div class="h6 article">&emsp;&emsp;3、在首页点击「添加按键」，点击右下角的「+」，轻按一下前端键，点击「添加」。</div>
+            <div class="h6 article">
+                &emsp;&emsp;4、点击刚才添加的按键，打开「自定义」开关，在「单击」、「双击」、「长按」中选择喜欢的一项操作，在弹出窗口的下拉菜单中选择「应用程序」，找到并选择「Pegasus」（天马前端）。
+            </div>
+            <img class="article_img" src="/rtcls/games/fereplace/img1.jpg" onclick="window.open('/rtcls/games/fereplace/img1.jpg')">
+            <div class="h6 article">
+                &emsp;&emsp;5、简单教程到这里就可以了，现在按下前端键就会启动天马前端，重启依然有效。但有时周哥的前端还是会蹦出来刷一下存在感，并且退出天马前端后还要从系统的下拉面板中手动关闭 RG
+                前端，解决方案就是用「adb」把「RGLauncher」给 ban 掉（详见「进阶教程」）。</div>
+        </div>
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>进阶教程（不建议小白操作）</em></div>
+            <div class="h6 article">&emsp;&emsp;1、<a
+                    href="https://developer.android.google.cn/studio/releases/platform-tools?hl=zh-cn"
+                    target="_blank">「点击此处」</a>获取「Platform-tools」。</div>
+            <div class="h6 article">&emsp;&emsp;2、掌机开启USB调试，用数据线连接电脑。</div>
+            <div class="h6 article">&emsp;&emsp;3、在「Platform-tools」文件夹中空白处右键，点击「在终端中打开」。</div>
+            <img class="article_img" src="/rtcls/games/fereplace/img2.jpg" onclick="window.open('/rtcls/games/fereplace/img2.jpg')">
+            <div class="h6 article">&emsp;&emsp;4、键入「<code>.\adb devices</code>」并回车，若在掌机上弹出询问「允许 USB 调试吗？」则点击允许。</div>
+            <img class="article_img" src="/rtcls/games/fereplace/img3.jpg" onclick="window.open('/rtcls/games/fereplace/img3.jpg')">
+            <img class="article_img" src="/rtcls/games/fereplace/img4.jpg" onclick="window.open('/rtcls/games/fereplace/img4.jpg')">
+            <div class="h6 article">&emsp;&emsp;5、键入「<code>.\adb shell am monitor</code>」并回车，然后启动 RG 前端，获取其包名为「com.ylm.launcher」。</div>
+            <img class="article_img" src="/rtcls/games/fereplace/img5.jpg" onclick="window.open('/rtcls/games/fereplace/img5.jpg')">
+            <div class="h6 article">&emsp;&emsp;6、键入「<code>q</code>」并回车以退出监视，然后键入「<code>.\adb shell pm disable-user com.ylm.launcher</code>」并回车，禁用 RG 前端。</div>
+            <img class="article_img" src="/rtcls/games/fereplace/img6.jpg" onclick="window.open('/rtcls/games/fereplace/img6.jpg')">
+            <div class="h6 article">&emsp;&emsp;7、此时便可以在「设置 → 应用 → 全部应用」中看到「RGLauncher」显示「已停用」，按下前端键也不会再唤起 RG 前端。若要重新启用，只需要在 ADB 中键入「<code>.\adb shell pm enable com.ylm.launcher</code>」即可。</div>
+            <img class="article_img" src="/rtcls/games/fereplace/img7.jpg" onclick="window.open('/rtcls/games/fereplace/img7.jpg')">
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+</html>
