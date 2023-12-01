@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>自己动手配置安卓天马前端</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="/rtcls/rtcls.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Title -->
+    <div class="container" id="title_container">
+        <ul class="list-group">
+            <li class="list-group-item" style="background: #ebebeb;">
+                <div class="row pull-right">
+                    <div class="col-md-10 col-sm-9 col-xs-12">
+                        <h2 id="title"><strong><em>自己动手配置安卓天马前端<small
+                                        class="data">&emsp;2023.12.01</small></em></strong>
+                        </h2>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-2" style="margin-top: 6px;">
+                        <button type="button" class="btn btn-secondary"
+                            onclick="window.location.href='/index.html'">返回首页</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Article -->
+    <div class="container">
+        <div class="bg-light article_bg">
+            <div class="h6 article">&emsp;&emsp;指的是不依靠任何傻瓜包，自己动手安装模拟器、整理游戏、配置天马前端等。</div>
+            <div class="h6 article">&emsp;&emsp;要看该教程，您最好对安卓设备如何安装应用、如何连接电脑传输数据等基本知识有所了解，因为本文不会对这些内容进行详解。
+            </div>
+            <div class="h6 article">&emsp;&emsp;本教程力求用最通俗的方式讲述配置安卓端天马前端的完整过程，关于配置元数据的具体规则请参考「Pegasus 官方文档」中的「<a
+                    href="https://pegasus-frontend.org/docs/user-guide/meta-files/" target="_blank">元数据文件</a>」、「<a
+                    href="https://pegasus-frontend.org/docs/dev/meta-syntax/" target="_blank">元数据语法</a>」、「<a
+                    href="https://pegasus-frontend.org/docs/user-guide/platform-android/#config-directory"
+                    target="_blank">平台说明：Android</a>」以及「<a
+                    href="https://pegasus-frontend.org/docs/user-guide/platform-android-example/"
+                    target="_blank">Android 示例</a>」几篇文章。
+            </div>
+        </div>
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>独立模拟器（以 AetherSX2 为例）</em></div>
+            <div class="h6 article">&emsp;&emsp;1、「<a href="https://pegasus-frontend.org/tools/metagen-android/"
+                    target="_blank">点击此处</a>」访问 Pegasus 官方的天马配置生成器，在左侧的 List
+                中找到你要配置的模拟器并选中，然后返回页面右上方并按需选择「点击蓝色按钮下载」或「直接复制灰色框中的内容」。下载好的文件名称为「metadata.pegasus.txt」，这是 Pegasus
+                优先指定的配置文件名称，尽量不要更改（如果是自己创建文件并手动复制粘贴，那么创建文件的名称也应该与此相同）。</div>
+            <img class="article_img" src="/rtcls/games/pegasus/img1.jpg"
+                onclick="window.open('/rtcls/games/pegasus/img1.jpg')">
+            <div class="h6 article">&emsp;&emsp;2、确保自己的安卓设备上已经安装了「AetherSX2 模拟器」和「Pegasus（天马前端）」。</div>
+            <div class="h6 article">
+                &emsp;&emsp;3、打开刚下载好的配置文件：「collection」指的是游戏合集的名称，「shortname」指的是游戏合集的简称，「extension」指的是该合集下会扫描的扩展名，「launch」是启动参数（非必要勿修改）。需要注意的是，在启动参数中，「-n」后面的内容「xyz.aethersx2.android/.EmulationActivity」为您使用模拟器的包名及启动指令，如果您使用了不同包名的模拟器，请自行修改此处。
+            </div>
+            <div class="h6 article">
+                &emsp;&emsp;4、将 PS2
+                游戏放在心仪的目录下，然后在配置文件中添加各项游戏的信息（格式如图）。其中，「game」为游戏名，「file」为游戏文件路径，这两项必填；此外，其它项均为润色观感的附加项（详见「Pegasus
+                官方文档」中的「<a href="https://pegasus-frontend.org/docs/user-guide/meta-files/"
+                    target="_blank">元数据文件</a>」），均为选填。将编辑好的配置文件放在游戏目录中。
+            </div>
+            <img class="article_img" src="/rtcls/games/pegasus/img2.jpg"
+                onclick="window.open('/rtcls/games/pegasus/img2.jpg')">
+            <div class="h6 article">
+                &emsp;&emsp;5、添加媒体文件：在游戏目录下新建一个名为「media」的文件夹，在文件夹中新建与各游戏实际文件名称同名的文件夹，将游戏封面命名为「boxFront.jpg」、游戏视频命名为「video.mp4」、游戏
+                logo 命名为「logo.jpg」，均放在其对应游戏的同名文件夹下。</div>
+            <img class="article_img" src="/rtcls/games/pegasus/img3.jpg"
+                onclick="window.open('/rtcls/games/pegasus/img3.jpg')">
+            <div class="h6 article">
+                &emsp;&emsp;6、在安卓设备中打开天马前端，从屏幕右侧向左滑或轻按 start 键，进入设置，在下方「设置游戏目录」中点击绿色的加号，找到 PS2
+                的游戏目录并选择「metadata.pegasus.txt」文件，然后点击返回，在弹出询问「是否重新载入游戏」时选择「确定」（如果不小心点了「取消」则可以点击下方的「Reload all
+                games」手动刷新）。
+            </div>
+            <div class="h6 article">
+                &emsp;&emsp;7、返回主界面，此时就可以看到刚才添加的游戏及其媒体信息了。
+            </div>
+            <img class="article_img" src="/rtcls/games/pegasus/img4.jpg"
+                onclick="window.open('/rtcls/games/pegasus/img4.jpg')">
+            <div class="h6 article">
+                &emsp;&emsp;注：天马前端调用 PPSSPP 独立模拟器会报错，所以通过天马前端启动 PSP 游戏要调用 RA 模拟器的 PPSSPP 核心。因此这节对 PPSSPP 模拟器不适用。</div>
+        </div>
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>Retroarch（明天再写）</em></div>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+</html>
