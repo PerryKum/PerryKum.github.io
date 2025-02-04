@@ -1,0 +1,11 @@
+span {
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
