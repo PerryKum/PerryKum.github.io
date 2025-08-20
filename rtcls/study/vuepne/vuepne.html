@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>【Web前端】Vue 的父子间通信 —— 餐厅模型</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="/rtcls/rtcls.css" rel="stylesheet">
+    <style>
+        #sp_code_block{
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Title -->
+    <div class="container" id="title_container">
+        <ul class="list-group">
+            <li class="list-group-item" style="background: #ebebeb;">
+                <div class="row pull-right">
+                    <div class="col-md-10 col-sm-9 col-xs-12">
+                        <h2 id="title"><strong><em>【Web前端】Vue 的父子间通信 —— 餐厅模型<small
+                                        class="data">&emsp;2024.12.06<small></em></strong>
+                        </h2>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-2" style="margin-top: 6px;">
+                        <button type="button" class="btn btn-secondary"
+                            onclick="window.location.href='/index.html'">返回首页</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Article -->
+    <div class="container">
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>前言</em></div>
+            <div class="h6 article">
+                &emsp;&emsp;在日常的 vue3 项目开发中，博主比较熟练使用 pinia 作状态管理来实现组件间的通讯，从而有些疏于对传统方法（props & emits）的练习，导致在某次项目开发过程中耽误了很多的时间。
+            </div>
+            <div class="h6 article">
+                &emsp;&emsp;网上现有的关于 props & emits 的教程大多是千篇一律，演示万变不离其宗的案例加之模糊的套话讲解，导致这些教程很难在人脑中留下印象。
+            </div>
+            <div class="h6 article">
+                &emsp;&emsp;笔者在生活中较为推崇「模型记忆法」，即将复杂的、晦涩的、不成体系的内容层层解析，绑定进一个具象的、形象的模型中，以实现轻松记忆和灵活应用。得益于「模型记忆法」，笔者将 props & emits 归纳成了「餐厅模型」，特在此记录，并希望能帮助有需要的人轻松理解 props & emits 的应用场景及方式。
+            </div>
+        </div>
+        <div class="bg-light article_bg">
+            <div class="h3 article article_title"><em>餐厅模型</em></div>
+            <div class="h5 article"><em>Props（父向子传递通信消息）</em></div>
+            <div class="h6 article">&emsp;&emsp;设想一下，你是一个饥肠辘辘的顾客，你走进了一家餐厅。</div>
+            <div class="h6 article article_notes">&emsp;&emsp;在这里，由子组件扮演顾客，由父组件扮演餐厅。</div>
+            <div class="h6 article">&emsp;&emsp;顾客想吃东西，但这家餐厅非常严格，只允许顾客点几个指定的菜，这些菜都写在菜单里给顾客看。</div>
+            <div class="h6 article article_notes">&emsp;&emsp;「指定的菜」即父组件通过 props 暴露给子组件的数据，这些数据在父组件里已经被规定好了。</div>
+            <div class="h6 article">
+                &emsp;&emsp;&emsp;<code>&lt;template&gt;</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code>&lt;!-- 写在父组件里 也就是餐厅里 --&gt;</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code>&lt;顾客 火山飘雪 = "西红柿炒鸡蛋" 佛山无影脚 = "卤猪蹄" :随便 = "餐厅决定" /&gt;</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code class="article_notes">&lt;Son const1 = "value1" const2 = "value2" :variable = "refValue" /&gt;</code><br/>
+                &emsp;&emsp;&emsp;<code>&lt;/template&gt;</code><br/>
+                <br/>
+                &emsp;&emsp;&emsp;<code>&lt;script&gt;</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code>const 餐厅决定 = ref("锅包肉");</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code class="article_notes">const variable = ref("refValue");</code><br/>
+                &emsp;&emsp;&emsp;<code>&lt;/script&gt;</code><br/>
+            </div>
+            <div class="h6 article">&emsp;&emsp;我们可以看出，顾客看到的菜名都是花里胡哨的，而餐厅知道这些菜的本质；客人不知道吃什么的时候，餐厅会拿出“餐厅决定”的菜给客人吃，默认是锅包肉。</div>
+            <div class="h6 article article_notes">&emsp;&emsp;在代码中依然是如此，变量名和值不一定相等。</div>
+            <div class="h6 article">&emsp;&emsp;顾客翻看菜单，里面每道菜旁边都有一个按钮。</div>
+            <div class="h6 article article_notes">&emsp;&emsp;「菜单」即子组件创建了一个 defineProps 对象，「菜」就是里面的属性，是父组件暴露给子组件的。</div>
+            <div id="sp_code_block">
+                <div class="h6 article">
+                    &emsp;&emsp;&emsp;<code>&lt;script&gt;</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;<code>// 写在子组件里 也就是顾客手里</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;<code>const 点菜 = 菜单({</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;<code>火山飘雪: {</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<code>种类: "素菜",</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<code>默认: "西红柿炒鸡蛋",</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;<code>},</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;<code>佛山无影脚: {</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<code>种类: "荤菜",</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<code>默认: "猪蹄",</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;<code>},</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;<code>随便: {</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<code>种类: "荤菜",</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<code>默认: "锅包肉",</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;<code>},</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;<code>});</code><br/>
+                    &emsp;&emsp;&emsp;<code>&lt;/script&gt;</code><br/>
+                </div>
+                <div class="h6 article article_notes">
+                    &emsp;&emsp;&emsp;<code>&lt;script&gt;</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;<code>// 写在子组件里 也就是顾客手里</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;<code>const props = defineProps({</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;<code>const1: {</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<code>type: String,</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<code>default: "value1",</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;<code>},</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;<code>const2: {</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<code>type: Number,</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<code>default: "value2",</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;<code>},</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;<code>variable: {</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<code>type: "Function",</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<code>默认: "refValue",</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;<code>},</code><br/>
+                    &emsp;&emsp;&emsp;&emsp;<code>});</code><br/>
+                    &emsp;&emsp;&emsp;<code>&lt;/script&gt;</code><br/>
+                </div>
+            </div>
+            <div class="h6 article">&emsp;&emsp;顾客的大脑飞速转动后，决定点一份“佛山无影脚”堂食，再点一份“火山飘雪”打包带走，然后通过打听得知了餐厅今天的“随便”是什么的信息。</div>
+            <div class="h6 article article_notes">&emsp;&emsp;props 里的值现在就可以被子组件使用了。</div>
+            <div class="h6 article">
+                &emsp;&emsp;&emsp;<code>&lt;template&gt;</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code>&lt;!-- 写在子组件里 也就是顾客手里 --&gt;</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code>&lt;餐桌 :打包 = "菜单.西红柿炒鸡蛋" :堂食 = "菜单.卤猪蹄" /&gt;</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code class="article_notes">&lt;div :useValue1 = "props.const1" useValue2 = "props.const2" /&gt;</code><br/>
+                &emsp;&emsp;&emsp;<code>&lt;/template&gt;</code><br/>
+                <br/>
+                &emsp;&emsp;&emsp;<code>&lt;script&gt;</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code>const 信息 = 菜单.随便; </code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code class="article_notes">const useValue3 = props.variable;</code><br/>
+                &emsp;&emsp;&emsp;<code>&lt;/script&gt;</code><br/>
+            </div>
+            <div class="h5 article"><em>Emits（子向父传递通信消息）</em></div>
+            <div class="h6 article">&emsp;&emsp;书接上文，顾客吃完饭了，想要评价一下餐厅的菜品。</div>
+            <div class="h6 article">&emsp;&emsp;餐厅有规定：如果菜品得到了差评，则直接删除该菜品；顾客想要给菜品评价，只需要按下菜单上对应菜品旁边的“好评”或“差评”按钮。</div>
+            <div class="h6 article">
+                &emsp;&emsp;&emsp;<code>&lt;script&gt;</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code>// 写在子组件里</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code>const 顾客评价 = 可用评价(["好评", "差评"]);</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code class="article_notes">const emits = defineEmits(["positive", "negative"]);</code><br/>
+                &emsp;&emsp;&emsp;<code>&lt;/script&gt;</code><br/>
+            </div>
+            <div class="h6 article">&emsp;&emsp;而餐厅这边，则是会关注用户点下了“好评”还是“差评”，并根据对应的评价给出不同的响应。</div>
+            <div class="h6 article article_notes">&emsp;&emsp;父组件根据监听到的句柄去执行对应的方法。</div>
+            <div class="h6 article">
+                &emsp;&emsp;&emsp;<code>&lt;template&gt;</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code>&lt;!-- 写在父组件里 也就是餐厅里 --&gt;</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code>&lt;顾客 @好评 = "感谢好评" @差评 = "抱歉差评" /&gt;</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code class="article_notes">&lt;Son @positive = "thank" @negative = "sorry" /&gt;</code><br/>
+                &emsp;&emsp;&emsp;<code>&lt;/template&gt;</code><br/>
+                <br/>
+                &emsp;&emsp;&emsp;<code>&lt;script&gt;</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code>规定 感谢好评() {</code><br/>
+                &emsp;&emsp;&emsp;&emsp;&emsp;<code>餐厅回应("感谢您的好评！");</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code>}</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code class="article_notes">function thank() {</code><br/>
+                &emsp;&emsp;&emsp;&emsp;&emsp;<code class="article_notes">console.log("感谢您的好评！");</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code class="article_notes">}</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code>规定 抱歉差评() {</code><br/>
+                &emsp;&emsp;&emsp;&emsp;&emsp;<code>删除(菜品编号);</code><br/>
+                &emsp;&emsp;&emsp;&emsp;&emsp;<code>餐厅回应("抱歉给您带来了不好的用餐体验！");</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code>}</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code class="article_notes">function sorry() {</code><br/>
+                &emsp;&emsp;&emsp;&emsp;&emsp;<code class="article_notes">delete(value.Id);</code><br/>
+                &emsp;&emsp;&emsp;&emsp;&emsp;<code class="article_notes">console.log("抱歉给您带来了不好的用餐体验！");</code><br/>
+                &emsp;&emsp;&emsp;&emsp;<code class="article_notes">}</code><br/>
+                &emsp;&emsp;&emsp;<code>&lt;/script&gt;</code><br/>
+            </div>
+            <div class="h6 article">&emsp;&emsp;实际上，根据上面的描述，我们可以看出，顾客没有直接删除菜品的权力，而是顾客通过评价“通知”餐厅，而餐厅去执行删去菜品的动作。</div>
+            <div class="h6 article article_notes">&emsp;&emsp;在代码中也是如此，子组件并没有实际给父组件“传递”什么，而是通过定义“事件”的句柄，然后将“事件”的句柄向上“冒泡”，由父组件监听冒泡的事件句柄，然后去执行对应的操作，是一个类似“通知”的过程。</div>
+            <div class="h6 article article_notes">&emsp;&emsp;因此，笔者认为很多教程中提到的「Emits 是子组件给父组件“传值”」是不准确的。</div>
+        </div>
+    </div>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+</html>

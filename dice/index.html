@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+       <div class="container">
+        <h1>test</h1>
+        <div>
+             <span>选择模式</span>
+             <select name="mode" id="mode" onchange="change()">
+                  <option value="dnd" selected>COC</option>
+                  <option value="self">self</option>
+                </select>
+        </div>
+          <div>
+           <span>运行次数</span>
+          <input type="text" id="t" />
+         </div>
+          <div>
+          <span>x能力</span>
+          <input type="text" id="x" />
+        </div>
+         <div>
+           <span>y能力</span>
+           <input type="text" id="y" />
+          </div>
+          <div id="coc">
+            <span>骰子面数</span>
+            <input type="text" id="d"/>
+          </div>
+          <div id="self" style="display: none;">
+            <span>胜点</span>
+            <input type="text" id="p"/>
+        </div>
+        <div>
+            <div><button onclick="run()">开始</button></div>
+        </div>
+        <div class="form">
+            <h1>结果</h1>
+            <table id="result"></table>
+        </div>       
+  </body>
+  <script src="./src/dnd.js"></script>
+  <script src="./src/self.js"></script>
+  <script>
+    function change() {
+        var mode = document.getElementById("mode").value;
+        if (mode == "dnd") {
+            document.getElementById("coc").style.display = "block";
+            document.getElementById("self").style.display = "none";
+        } else if (mode == "self") {
+            document.getElementById("coc").style.display = "none";
+            document.getElementById("self").style.display = "block";
+        }
+    }
+    function run() {
+        if(document.getElementById("mode").value == "dnd"){
+            dnd_run(document.getElementById("x").value, document.getElementById("y").value, document.getElementById("t").value, document.getElementById("d").value);
+        }
+        if(document.getElementById("mode").value == "self"){
+            self_run(document.getElementById("x").value, document.getElementById("y").value, document.getElementById("t").value,document.getElementById("p").value);
+    }}
+  </script>
+</html>
