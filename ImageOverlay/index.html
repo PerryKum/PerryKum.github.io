@@ -28,6 +28,10 @@
       .cta { display: flex; gap: 12px; flex-wrap: nowrap; margin-top: 12px; align-items: center; }
       .cta .more { display: inline-flex; gap: 12px; overflow: hidden; max-width: 0; transition: max-width .35s ease; white-space: nowrap; align-items: center; will-change: max-width; }
       .cta.open .more { max-width: 1000px; }
+      /* 移动端竖直展开 */
+      .cta.vertical { flex-direction: column; align-items: flex-start; }
+      .cta.vertical .more { display: flex; flex-direction: column; gap: 12px; overflow: hidden; width: 100%; white-space: normal; max-height: 0; max-width: none; transition: max-height .35s ease; }
+      .cta.vertical.open .more { max-height: 800px; }
       .btn { display: inline-block; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border); background: var(--card); color: var(--text); }
       .btn .icon { width: 16px; height: 16px; margin-right: 8px; fill: currentColor; vertical-align: -3px; }
       .btn.primary { background: var(--primary); border-color: transparent; color: white; }
@@ -206,6 +210,20 @@
       const toggle = cta.querySelector('.toggle');
       const more = cta.querySelector('.more');
       if (!toggle || !more) return;
+
+      // 检测移动端并启用竖直展开
+      function isMobileDevice() {
+        try {
+          return (
+            ("ontouchstart" in window && (navigator.maxTouchPoints || 0) > 0) ||
+            (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) ||
+            /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)
+          );
+        } catch (_) { return false; }
+      }
+      if (isMobileDevice()) {
+        cta.classList.add('vertical');
+      }
 
       function open() { cta.classList.add('open'); }
       function close() { cta.classList.remove('open'); }
