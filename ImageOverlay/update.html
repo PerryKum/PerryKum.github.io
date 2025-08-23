@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ImageOverlay - 更新日志</title>
+    <meta name="description" content="ImageOverlay 安卓掌机全局遮罩工具的更新日志" />
+    <style>
+      :root {
+        --bg: #0f1220;
+        --bg-soft: #13162b;
+        --text: #e6e7ef;
+        --muted: #9aa0b4;
+        --primary: #7c5cff;
+        --primary-weak: #7c5cff22;
+        --card: #171a31;
+        --border: #2a2f47;
+        --success: #10b981;
+        --warning: #f59e0b;
+        --error: #ef4444;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; }
+      a { color: var(--primary); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      code, kbd { background: var(--bg-soft); border: 1px solid var(--border); padding: 0.12rem 0.35rem; border-radius: 6px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+      .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+      .hero { padding: 72px 0 48px; background: radial-gradient(1200px 500px at 50% -50%, var(--primary-weak), transparent); border-bottom: 1px solid var(--border); }
+      .hero h1 { font-size: 36px; margin: 0 0 12px; }
+      .hero p { margin: 0 0 20px; color: var(--muted); font-size: 18px; }
+      .btn { display: inline-block; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border); background: var(--card); color: var(--text); }
+      .btn .icon { width: 16px; height: 16px; margin-right: 8px; fill: currentColor; vertical-align: -3px; }
+      .btn.primary { background: var(--primary); border-color: transparent; color: white; }
+      .btn:hover { filter: brightness(1.06); }
+      .nav { position: sticky; top: 0; backdrop-filter: blur(8px); background: color-mix(in oklab, var(--bg) 92%, transparent); border-bottom: 1px solid var(--border); z-index: 10; }
+      .nav .inner { display: flex; gap: 16px; align-items: center; height: 56px; }
+      .nav a { color: var(--muted); font-size: 14px; }
+      .nav a:hover { color: var(--text); }
+      section { padding: 36px 0; border-bottom: 1px solid var(--border); }
+      h2 { font-size: 22px; margin: 0 0 12px; }
+      h3 { font-size: 18px; margin: 20px 0 6px; color: var(--text); }
+      ul { margin: 8px 0 0 18px; }
+      li { margin: 6px 0; }
+      .muted { color: var(--muted); }
+      .version { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+      .version-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+      .version-tag { background: var(--primary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 14px; font-weight: 500; }
+      .version-date { color: var(--muted); font-size: 14px; }
+      .feature-list { margin: 16px 0; }
+      .feature-item { display: flex; align-items: flex-start; gap: 8px; margin: 8px 0; }
+      .feature-icon { width: 16px; height: 16px; margin-top: 2px; flex-shrink: 0; }
+      .feature-icon.new { fill: var(--success); }
+      .feature-icon.fix { fill: var(--warning); }
+      .feature-icon.bug { fill: var(--error); }
+      .feature-text { flex: 1; }
+      .known-issues { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin: 16px 0; }
+      .known-issues h4 { margin: 0 0 8px; color: var(--warning); }
+      footer { padding: 40px 0; color: var(--muted); font-size: 14px; }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <h1>ImageOverlay 更新日志</h1>
+        <p>记录 ImageOverlay 安卓掌机全局遮罩工具的功能更新与问题修复</p>
+        <a class="btn primary" href="index.html">
+          <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M7.78 12.53a.75.75 0 0 1-1.06 0L2.47 8.28a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 1.06L4.81 7h7.44a.75.75 0 0 1 0 1.5H4.81l2.97 2.97a.75.75 0 0 1 0 1.06Z"/></svg>
+          返回首页
+        </a>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <div class="container inner">
+        <a href="#v1.1">v1.1</a>
+        <a href="#v1.0">v1.0</a>
+        <a href="#known-issues">已知问题</a>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section id="v1.1">
+        <div class="version">
+          <div class="version-header">
+            <span class="version-tag">v1.1</span>
+            <span class="version-date">最新版本</span>
+          </div>
+          
+          <h3>新增功能</h3>
+          <div class="feature-list">
+            <div class="feature-item">
+              <svg class="feature-icon new" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4Z"/>
+              </svg>
+              <div class="feature-text">首次启动软件时，要求用户选择配置文件存储位置</div>
+            </div>
+            <div class="feature-item">
+              <svg class="feature-icon new" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4Z"/>
+              </svg>
+              <div class="feature-text">新增配置文件迁移功能</div>
+            </div>
+          </div>
+
+          <h3>Bug 修复</h3>
+          <div class="feature-list">
+            <div class="feature-item">
+              <svg class="feature-icon fix" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+              </svg>
+              <div class="feature-text">修复点击清空缓存设置项时会导致闪退的 bug</div>
+            </div>
+            <div class="feature-item">
+              <svg class="feature-icon fix" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+              </svg>
+              <div class="feature-text">修复长按已启动的配置项/组时会导致闪退的 bug</div>
+            </div>
+            <div class="feature-item">
+              <svg class="feature-icon fix" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+              </svg>
+              <div class="feature-text">修复启动某一遮罩（快速/默认/配置项）时，其他遮罩逻辑上关闭但遮罩效果不消失导致遮罩堆叠的 bug</div>
+            </div>
+            <div class="feature-item">
+              <svg class="feature-icon fix" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+              </svg>
+              <div class="feature-text">修复删除配置组不生效，且可能导致闪退的 bug</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="v1.0">
+        <div class="version">
+          <div class="version-header">
+            <span class="version-tag">v1.0</span>
+            <span class="version-date">初始版本</span>
+          </div>
+          
+          <h3>基础功能</h3>
+          <div class="feature-list">
+            <div class="feature-item">
+              <svg class="feature-icon new" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4Z"/>
+              </svg>
+              <div class="feature-text">基础功能正常，后续功能陆续开发中...</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="known-issues">
+        <h2>已知问题（暂未修复）</h2>
+        <div class="known-issues">
+          <h4>⚠️ 兼容性问题</h4>
+          <p>安卓12、14、15（可能是非游戏机设备）上启动软件会闪退。</p>
+          <p class="muted">我们正在积极调查和解决这个兼容性问题，建议在支持的设备上使用。</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="muted">© ImageOverlay. 以 GPL-3.0 开源发布。</div>
+      </div>
+    </footer>
+  </body>
+</html>
